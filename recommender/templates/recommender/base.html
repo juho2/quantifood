@@ -11,15 +11,12 @@
 	{% if user.is_authenticated %}
 	| <a href="{% url 'recommender:history' %}">My History</a>
 	| <a href="{% url 'recommender:profile' %}">My Profile</a>
-	{% endif %}
-	{% if not user.is_authenticated %}
-	| <a href="{% url 'recommender:login' %}">Log in</a>
-	{% endif %}
-	{% if user.is_authenticated %}
 	| <a href="{% url 'recommender:logout' %}?next=/">Log out</a>
 	{% endif %}
 	{% if not user.is_authenticated %}
+	| <a href="{% url 'recommender:login' %}">Log in</a>
 	| <a href="{% url 'recommender:register' %}">Register</a>
+	| <a href="{% url 'admin:index' %}">Admin</a>
 	{% endif %}
     </div>
     <hr>

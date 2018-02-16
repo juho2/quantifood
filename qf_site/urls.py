@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""qf_site URL Configuration
 
 The `urlpatterns` list routes URLs to views.
 """
@@ -6,7 +6,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from . import views
-#from recommender import views as rec_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

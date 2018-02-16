@@ -1,17 +1,17 @@
 from django.db import models
 from django.contrib.postgres.fields import JSONField
-#from django.utils import timezone
 from django.contrib.auth.models import User  # django built-in User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-#from django.core import validators
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    food_history = JSONField(default=list(), blank=True)#, validators=[validate_comma_separated_integer_list])
+    food_history = JSONField(default=list(), blank=True)
 
     def __repr__(self):
         return(self.food_history)
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

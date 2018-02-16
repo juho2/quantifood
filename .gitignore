@@ -1,6 +1,6 @@
 # gcloud client config
 app.yaml
-mysite/settings.py
+qf_site/settings.py
 
 # pycharm
 .idea

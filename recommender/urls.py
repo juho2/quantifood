@@ -1,6 +1,4 @@
 from django.conf.urls import include, url
-#from django.views.generic.edit import CreateView
-#from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import views as auth_views
 
 from . import views
@@ -19,13 +17,4 @@ urlpatterns = [
     url(r'^register/complete/$', views.registration_complete, name='registration_complete'),
     url(r'^reset/$', views.reset, name='reset'),
     url(r'^plot_history.png$', views.plot_history, name='plot_history')
-#    url(r'^login/$', 'django.contrib.auth.views.login', {
-#    'template_name': 'recommender/login.html'
-#    }),
-#    url('^register/', CreateView.as_view(
-#            template_name='recommender/register.html',
-#            form_class=UserCreationForm,
-#            success_url='/'
-#    )),
-#    url('^accounts/', include('django.contrib.auth.urls')),
 ]
