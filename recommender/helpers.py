@@ -1,9 +1,6 @@
 from django.http import HttpResponse
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')
 from matplotlib import pyplot as plt
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import os
 
 from .models import Food
