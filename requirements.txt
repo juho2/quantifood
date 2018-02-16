@@ -1,0 +1,11 @@
+cycler==0.10.0
+Django==2.0.2
+django-jsonfield==1.0.1
+gunicorn==19.7.1
+matplotlib==2.1.2
+numpy==1.14.0
+psycopg2==2.7.4
+pyparsing==2.2.0
+python-dateutil==2.6.1
+pytz==2018.3
+six==1.11.0

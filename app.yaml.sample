@@ -1,0 +1,13 @@
+# For cgloud deployment. Insert cloudsql instance below.
+
+# [START runtime]
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT mysite.wsgi
+
+beta_settings:
+    cloud_sql_instances: <gcloud-sqlinstance-connection-name>
+
+runtime_config:
+  python_version: 3
+# [END runtime]

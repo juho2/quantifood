@@ -1,0 +1,15 @@
+{% extends 'recommender/base.html' %}
+{% block content %}
+{% if prefs %}
+    <ul>
+    {% for key, val in prefs.items %}
+		<h3>{{ key }}</h3>
+		{% for key2, val2 in val.items %}
+			<li>{{ key2 }}: {{ val2 }}</li>
+		{% endfor %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No preferences.</p>
+{% endif %}
+{% endblock %}

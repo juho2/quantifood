@@ -1,0 +1,28 @@
+{% extends 'recommender/base.html' %}
+{% block content %}
+ <h3>What would you like to eat today, {{ user.username }}?</h3>
+{% if user.is_authenticated %}
+{% if best %}
+    <ul>
+    {% for items in best %}
+        <!-- <li><a href="/history/{{ food.id }}/">{{ food.name }}</a></li> -->
+		<li><a href="{% url 'recommender:eat_ID' items.0 %}">Eat a serving </a> of {{ items.1 }} % rated: <a href={{ items.3 }}>{{ items.2 }}</a> ({{ items.0 }})</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No recommendations available.</p>
+{% endif %}
+{% endif %}
+<br>
+<!-- {{ target }} -->
+<br>
+{% if not user.is_authenticated %}
+<p> Please log in to view nutrient-optimized recommendations for You.</p>
+{% endif %}
+{% endblock %}
+
+<!-- 
+ <p><a href="{% url 'recommender:index' %}">Home</a></p>
+ <p><a href="{% url 'recommender:profile' %}">Profile</a></p>
+ <p><a href="{% url 'recommender:history' %}">Food History</a></p>
+ -->

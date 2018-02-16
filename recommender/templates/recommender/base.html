@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'recommender/style.css' %}" />
+<html>
+  <head>
+    <title>{{ title }} - QuantiFood</title>
+  </head>
+  <body>
+	<div>
+	<a href="{% url 'recommender:index' %}"><img src="{% static 'recommender/images/logo.png' %}" alt="QuantiFood" width="256" height="100"> Home</a>
+	{% if user.is_authenticated %}
+	| <a href="{% url 'recommender:history' %}">My History</a>
+	| <a href="{% url 'recommender:profile' %}">My Profile</a>
+	{% endif %}
+	{% if not user.is_authenticated %}
+	| <a href="{% url 'recommender:login' %}">Log in</a>
+	{% endif %}
+	{% if user.is_authenticated %}
+	| <a href="{% url 'recommender:logout' %}?next=/">Log out</a>
+	{% endif %}
+	{% if not user.is_authenticated %}
+	| <a href="{% url 'recommender:register' %}">Register</a>
+	{% endif %}
+    </div>
+    <hr>
+    {% block content %}
+	{% endblock %}
+  </body>
+</html>
