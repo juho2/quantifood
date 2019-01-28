@@ -1,7 +1,6 @@
 ## quantifood
 
-Nutrition-optimizing meal recommender Django app based on recipes scraped from food.com, 
-might be up [here](https://quantifood-195407.appspot.com "QuantiFood").
+Nutrition-optimizing meal recommender Django app based on recipes scraped from food.com.
 Not for medical use, no warranties, consult your crossfit trainer or similar.
 
 
